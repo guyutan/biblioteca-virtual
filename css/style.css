@@ -1,0 +1,781 @@
+/* 🌎 1. Variables Globales */
+:root {
+ --primaryColor: #000000;
+ --secondaryColor: #e18990;
+ --textColor: #ffffff;
+ --lightTextColor: #af3737;
+ --borderRadius: 8px;
+ --paddingSmall: 0.5rem;
+ --paddingMedium: 1rem;
+ --paddingLarge: 3rem 2rem;
+ --boxShadow: 0px 2px 8px #f4d24a;
+ --transition: background-color 0.3s ease;
+}
+
+/* 🔄 2. CSS Reset y Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/*3. Estructura y Componentes */
+header,
+.footer {
+    background-color: var(--primaryColor);
+}
+
+.header,
+nav ul,
+.slider,
+.testimoniales {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header {
+    padding: var(--paddingSmall) 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav a {
+    margin-right: 20px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--textColor);
+    border-radius: var(--borderRadius);
+    transition: var(--transition);
+}
+
+nav a:hover {
+    background-color: var(--secondaryColor);
+}
+
+.titulo,
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bernard MT Condensed";
+}
+
+.titulo h1 {
+    font-size: 3em;
+}
+
+.logo img,
+.redes-sociales img {
+    height: 3em; 
+    margin: 0.5rem;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+section {
+    margin: var(--paddingMedium) 0;
+}
+
+.hero,
+.slide {
+    background: var(--secondaryColor);
+    padding: var(--paddingLarge);
+    border-radius: var(--borderRadius);
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+button {
+    background-color: var(--primaryColor);
+    color: var(--textColor);
+    font-size: 16px;
+    margin: 16px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--borderRadius);
+    transition: background-color 0.1s ease;
+    box-shadow: var(--boxShadow);
+}
+
+button:hover {
+    background-color: #8a3434;
+}
+
+.slider {
+    overflow-x: auto;
+}
+
+.slide {
+    flex: 0 0 30%;
+    margin: var(--paddingMedium);
+    padding: var(--paddingMedium);
+    border: 2px solid #770808;
+    transition: var(--transition);
+}
+
+.slide img {
+    width: 50%;
+    height: auto;
+}
+
+.testimoniales blockquote {
+    flex: 0 0 30%;
+    padding: var(--paddingMedium);
+    color: var(--lightTextColor);
+}
+
+/* Contacto */
+.contact-section {
+    text-align: center;
+    margin: 20px;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--paddingSmall);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Sobrescritura de Pico y Estilos Específicos */
+header nav {
+    padding: 0 2rem;
+}
+
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Centrado de Elementos Clave (INCLUYE BOTONES DE PRODUCTO) */
+.hero,
+.tarjeta-producto,
+.tarjeta-producto footer, /* SOLUCIÓN para centrar los botones */
+footer {
+    text-align: center;
+}
+
+/* LAYOUT DE PRODUCTOS (4 Columnas por defecto para pantallas grandes) */
+.producto {
+     grid-template-columns: repeat(4, 1fr); 
+}
+
+/* Tema de Color y Modo Oscuro (Aplicado para Header, Footer, Hero) */
+header,
+footer,
+.hero {
+    background-color: #ab846b;
+    box-shadow: 0px 4px 8px #ab6d4d;
+    color: var(--textColor); /* Añadido para asegurar que el texto sea blanco */
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+    header,footer,.hero {
+        background-color: #ff5e5e;
+        box-shadow: 0px 4px 8px #111;
+        color: var(--textColor);
+    }
+}
+
+
+/* 📱 4. Media Queries (Diseño Adaptable) */
+@media (max-width: 768px) {
+.footer {
+    text-align: left;
+ }
+
+.slide {
+    flex: 0 0 40%;
+ }
+
+.testimoniales blockquote {
+    flex: 0 0 100%;
+ }
+    
+    /* Reglas específicas para el layout móvil */
+
+
+.wrap {
+    justify-content: center;
+    align-items: center;
+ }
+
+.producto {   
+    grid-template-columns: 1fr; /* 👈 Una columna en móvil */
+}
+
+header nav {
+    padding: 0 .5rem;
+}
+}/* 🌎 1. Variables Globales */
+:root {
+ --primaryColor: #000000;
+ --secondaryColor: #e18990;
+ --textColor: #ffffff;
+ --lightTextColor: #af3737;
+ --borderRadius: 8px;
+ --paddingSmall: 0.5rem;
+ --paddingMedium: 1rem;
+ --paddingLarge: 3rem 2rem;
+ --boxShadow: 0px 2px 8px #f4d24a;
+ --transition: background-color 0.3s ease;
+}
+
+/* 🔄 2. CSS Reset y Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/*3. Estructura y Componentes */
+header,
+.footer {
+    background-color: var(--primaryColor);
+}
+
+.header,
+nav ul,
+.slider,
+.testimoniales {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header {
+    padding: var(--paddingSmall) 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav a {
+    margin-right: 20px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--textColor);
+    border-radius: var(--borderRadius);
+    transition: var(--transition);
+}
+
+nav a:hover {
+    background-color: var(--secondaryColor);
+}
+
+.titulo,
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bernard MT Condensed";
+}
+
+.titulo h1 {
+    font-size: 3em;
+}
+
+.logo img,
+.redes-sociales img {
+    height: 3em; 
+    margin: 0.5rem;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+section {
+    margin: var(--paddingMedium) 0;
+}
+
+.hero,
+.slide {
+    background: var(--secondaryColor);
+    padding: var(--paddingLarge);
+    border-radius: var(--borderRadius);
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+button {
+    background-color: var(--primaryColor);
+    color: var(--textColor);
+    font-size: 16px;
+    margin: 16px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--borderRadius);
+    transition: background-color 0.1s ease;
+    box-shadow: var(--boxShadow);
+}
+
+button:hover {
+    background-color: #8a3434;
+}
+
+.slider {
+    overflow-x: auto;
+}
+
+.slide {
+    flex: 0 0 30%;
+    margin: var(--paddingMedium);
+    padding: var(--paddingMedium);
+    border: 2px solid #770808;
+    transition: var(--transition);
+}
+
+.slide img {
+    width: 50%;
+    height: auto;
+}
+
+.testimoniales blockquote {
+    flex: 0 0 30%;
+    padding: var(--paddingMedium);
+    color: var(--lightTextColor);
+}
+
+/* Contacto */
+.contact-section {
+    text-align: center;
+    margin: 20px;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--paddingSmall);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Sobrescritura de Pico y Estilos Específicos */
+header nav {
+    padding: 0 2rem;
+}
+
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Centrado de Elementos Clave (INCLUYE BOTONES DE PRODUCTO) */
+.hero,
+.tarjeta-producto,
+.tarjeta-producto footer, /* SOLUCIÓN para centrar los botones */
+footer {
+    text-align: center;
+}
+
+/* LAYOUT DE PRODUCTOS (4 Columnas por defecto para pantallas grandes) */
+.producto {
+     grid-template-columns: repeat(4, 1fr); 
+}
+
+/* Tema de Color y Modo Oscuro (Aplicado para Header, Footer, Hero) */
+header,
+footer,
+.hero {
+    background-color: #ab846b;
+    box-shadow: 0px 4px 8px #ab6d4d;
+    color: var(--textColor); /* Añadido para asegurar que el texto sea blanco */
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+    header,footer,.hero {
+        background-color: #ff5e5e;
+        box-shadow: 0px 4px 8px #111;
+        color: var(--textColor);
+    }
+}
+
+
+/* 📱 4. Media Queries (Diseño Adaptable) */
+@media (max-width: 768px) {
+.footer {
+    text-align: left;
+ }
+
+.slide {
+    flex: 0 0 40%;
+ }
+
+.testimoniales blockquote {
+    flex: 0 0 100%;
+ }
+    
+    /* Reglas específicas para el layout móvil */
+
+
+.wrap {
+    justify-content: center;
+    align-items: center;
+ }
+
+.producto {   
+    grid-template-columns: 1fr; /* 👈 Una columna en móvil */
+}
+
+header nav {
+    padding: 0 .5rem;
+}
+}/* 🌎 1. Variables Globales */
+:root {
+ --primaryColor: #000000;
+ --secondaryColor: #e18990;
+ --textColor: #ffffff;
+ --lightTextColor: #af3737;
+ --borderRadius: 8px;
+ --paddingSmall: 0.5rem;
+ --paddingMedium: 1rem;
+ --paddingLarge: 3rem 2rem;
+ --boxShadow: 0px 2px 8px #f4d24a;
+ --transition: background-color 0.3s ease;
+}
+
+/* 🔄 2. CSS Reset y Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/*3. Estructura y Componentes */
+header,
+.footer {
+    background-color: var(--primaryColor);
+}
+
+.header,
+nav ul,
+.slider,
+.testimoniales {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header {
+    padding: var(--paddingSmall) 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav a {
+    margin-right: 20px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--textColor);
+    border-radius: var(--borderRadius);
+    transition: var(--transition);
+}
+
+nav a:hover {
+    background-color: var(--secondaryColor);
+}
+
+.titulo,
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bernard MT Condensed";
+}
+
+.titulo h1 {
+    font-size: 3em;
+}
+
+.logo img,
+.redes-sociales img {
+    height: 3em; 
+    margin: 0.5rem;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+section {
+    margin: var(--paddingMedium) 0;
+}
+
+.hero,
+.slide {
+    background: var(--secondaryColor);
+    padding: var(--paddingLarge);
+    border-radius: var(--borderRadius);
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+button {
+    background-color: var(--primaryColor);
+    color: var(--textColor);
+    font-size: 16px;
+    margin: 16px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--borderRadius);
+    transition: background-color 0.1s ease;
+    box-shadow: var(--boxShadow);
+}
+
+button:hover {
+    background-color: #8a3434;
+}
+
+.slider {
+    overflow-x: auto;
+}
+
+.slide {
+    flex: 0 0 30%;
+    margin: var(--paddingMedium);
+    padding: var(--paddingMedium);
+    border: 2px solid #770808;
+    transition: var(--transition);
+}
+
+.slide img {
+    width: 50%;
+    height: auto;
+}
+
+.testimoniales blockquote {
+    flex: 0 0 30%;
+    padding: var(--paddingMedium);
+    color: var(--lightTextColor);
+}
+
+/* Contacto */
+.contact-section {
+    text-align: center;
+    margin: 20px;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--paddingSmall);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Sobrescritura de Pico y Estilos Específicos */
+header nav {
+    padding: 0 2rem;
+}
+
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Centrado de Elementos Clave (INCLUYE BOTONES DE PRODUCTO) */
+.hero,
+.tarjeta-producto,
+.tarjeta-producto footer, /* SOLUCIÓN para centrar los botones */
+footer {
+    text-align: center;
+}
+
+/* LAYOUT DE PRODUCTOS (4 Columnas por defecto para pantallas grandes) */
+.producto {
+     grid-template-columns: repeat(4, 1fr); 
+}
+
+/* Tema de Color y Modo Oscuro (Aplicado para Header, Footer, Hero) */
+header,
+footer,
+.hero {
+    background-color: #ab846b;
+    box-shadow: 0px 4px 8px #ab6d4d;
+    color: var(--textColor); /* Añadido para asegurar que el texto sea blanco */
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+    header,footer,.hero {
+        background-color: #ff5e5e;
+        box-shadow: 0px 4px 8px #111;
+        color: var(--textColor);
+    }
+}
+
+
+/* 📱 4. Media Queries (Diseño Adaptable) */
+@media (max-width: 768px) {
+.footer {
+    text-align: left;
+ }
+
+.slide {
+    flex: 0 0 40%;
+ }
+
+.testimoniales blockquote {
+    flex: 0 0 100%;
+ }
+    
+    /* Reglas específicas para el layout móvil */
+
+
+.wrap {
+    justify-content: center;
+    align-items: center;
+ }
+
+.producto {   
+    grid-template-columns: 1fr; /* 👈 Una columna en móvil */
+}
+
+header nav {
+    padding: 0 .5rem;
+}
+}
